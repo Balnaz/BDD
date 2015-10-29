@@ -2,7 +2,7 @@ package com.hascode.tutorial.cucumber.book;
  
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -26,13 +26,7 @@ public class Library {
                     }
                 }
                 
-                booksBetweenDates.sort(new Comparator<Book>() {
-
-                    @Override
-                    public int compare(Book book1, Book book2) {
-                        return book1.getPublished().compareTo(book2.getPublished());
-                    }
-                });
+                Collections.sort(booksBetweenDates);
                 
                 return booksBetweenDates;
 	}

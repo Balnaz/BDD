@@ -2,7 +2,7 @@ package com.hascode.tutorial.cucumber.book;
  
 import java.util.Date;
  
-public class Book {
+public class Book implements Comparable<Book> {
 	private final String title;
 	private final String author;
 	private final Date published;
@@ -24,6 +24,9 @@ public class Book {
     public Date getPublished() {
         return published;
     }
- 
-	
+
+    @Override
+    public int compareTo(Book o) {
+        return this.getPublished().compareTo(o.getPublished());
+    }
 }
